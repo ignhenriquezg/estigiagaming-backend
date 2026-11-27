@@ -1,6 +1,7 @@
 package com.estigiagaming.backend.model;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name = "usuario")
@@ -19,6 +20,7 @@ public class Usuario {
     @Column(unique = true)
     private String correo;
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String clave;
     private String rol;
     private String region;
